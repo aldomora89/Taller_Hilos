@@ -8,8 +8,8 @@ package Threads;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import taller_hilos.MatrizC;
 import taller_hilos.RunM;
+
 
 /**
  *
@@ -26,19 +26,20 @@ public class Usuario implements Runnable {
 
         while (RunM.correr) {
 
-            uX = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la posicion en que fila podria existir una semilla", JOptionPane.QUESTION_MESSAGE + RunM.mX));
-            uY = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la posicion en que Columna podria existir una semilla", JOptionPane.QUESTION_MESSAGE + RunM.mY));
+            uX = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la posición en que FILA podria existir una semilla") + RunM.mX);
+            uY = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la posición en que COLUMNA podria existir una semilla") + RunM.mY);
 
             RunM.Matriz[uX][uY].setUs(1);
+            //System.out.println("El usuario se encuentra en la posicion " + RunM.Matriz[uX][uY]);
 
             if (RunM.Matriz[uX][uY].getSer() >= 1) {
-                JOptionPane.showMessageDialog(null, "Una serpiente ", " esta en la misma posicion que Usuario!", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Una serpiente esta en la misma posición que Usuario", "Error", JOptionPane.ERROR_MESSAGE);
                 RunM.correr = false;
                 break;
             } else if (RunM.Matriz[uX][uY].getSemi() >= 1) {
                 RunM.Matriz[uX][uY].setSemi(RunM.Matriz[uX][uY].getSemi() - 1);
                 NSemillas++;
-                JOptionPane.showMessageDialog(null, "Bingo has encontrado ", " una semilla!", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Has encontrado una semilla ", " Bingo!", JOptionPane.INFORMATION_MESSAGE);
                 try {
                     Thread.sleep(5000);
                 } catch (InterruptedException ex) {
@@ -55,7 +56,7 @@ public class Usuario implements Runnable {
             RunM.Matriz[uX][uY].setUs(0);
         }
 
-        JOptionPane.showMessageDialog(null, "Juego Terminado! ", "\nHabian " + RunM.NSemilla +" Semillas " + "\nUsuario consiguio: " + NSemillas + "\n Las Serpientes consiguieron: " + RunM.SSerpi, JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Habian " + RunM.TotalS  + " Semillas " + "\nLos Usuarios consiguieron: " + NSemillas + "\nLas Serpientes consiguieron: " + RunM.SSerpi, "Juego Terminado! ", JOptionPane.INFORMATION_MESSAGE);
     }
 
 }

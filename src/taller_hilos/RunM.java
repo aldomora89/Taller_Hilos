@@ -11,7 +11,7 @@ package taller_hilos;
  */
 public class RunM {
 
-    public static int SSerpi = 0, mX = 8, mY = 8, NSerpi, NSemilla;
+    public static int SSerpi = 0, mX = 8, mY = 8, NSerpi, TotalS = 0;
     public static MatrizC Matriz[][] = new MatrizC[mX][mY];
     public static boolean correr = true;
 

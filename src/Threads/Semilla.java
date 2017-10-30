@@ -20,7 +20,7 @@ public class Semilla implements Runnable {
     
     int Sx = 0;
     int Sy = 0;  
-    int TotalSemillas = Sx + Sy;
+
     
     @Override
     public void run(){
@@ -30,7 +30,8 @@ public class Semilla implements Runnable {
                 Sx = (int) (Math.random() * RunM.mX);
                 Sy = (int) (Math.random() * RunM.mY);
                 RunM.Matriz[Sx][Sy].setSemi(RunM.Matriz[Sx][Sy].getSemi() + 1);
-                JOptionPane.showMessageDialog(null,"La semilla fue plantada en la posicion " + Sx + "  " + Sy);
+                System.out.println("La semilla fue plantada en la posicion " + Sx + "  " + Sy);
+                RunM.TotalS++;
             }
             try {
                 Thread.sleep(10000);

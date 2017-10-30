@@ -32,15 +32,15 @@ public class Serpiente implements Runnable {
         x = (int) (Math.random() * RunM.mY);
         while (RunM.correr) {
             RunM.Matriz[x][y].setSer(RunM.Matriz[x][y].getSer() + 1);
-            System.out.println("Serpiente " + nSerp + " está en " + x + " , " + y);
+            System.out.println("Serpiente " + nSerp + " está en " + x + "   " + y);
             if (RunM.Matriz[x][y].getUs() == 1) {
-                JOptionPane.showMessageDialog(null, "La Serpiente " + nSerp, " encontró al usuario!", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Encontramos a un usuario en nuestro camino! " + nSerp, "Advertencia!", JOptionPane.ERROR_MESSAGE);
                 RunM.correr = false;
                 break;
             } else if (RunM.Matriz[x][y].getSemi() >= 1) {
                 RunM.Matriz[x][y].setSemi(RunM.Matriz[x][y].getSemi() - 1);
                 RunM.SSerpi++;
-                JOptionPane.showMessageDialog(null, "La serpiente " + nSerp , " encontró una semilla",JOptionPane.INFORMATION_MESSAGE);
+                System.out.println("La serpiente " + nSerp +" encontró una semilla");
                 try {
                     Thread.sleep(10000);
                 } catch (InterruptedException ex) {

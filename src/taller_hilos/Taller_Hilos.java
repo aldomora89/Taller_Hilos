@@ -24,13 +24,13 @@ public class Taller_Hilos {
     public static void main(String[] args) {
 
         // TODO code application logic here
-        String tfila = JOptionPane.showInputDialog(null, "Ingrese la cantidad de Filas de la matriz: ", JOptionPane.QUESTION_MESSAGE);
+        String tfila = JOptionPane.showInputDialog(null, "Ingrese la cantidad de Filas de la matriz: ");
         RunM.mX = Integer.parseInt(tfila);
 
-        String tColum = JOptionPane.showInputDialog(null, "Ingrese la cantidad de Columnas de la matriz: ", JOptionPane.QUESTION_MESSAGE);
+        String tColum = JOptionPane.showInputDialog(null, "Ingrese la cantidad de Columnas de la matriz: ");
         RunM.mY = Integer.parseInt(tColum);
 
-        RunM.NSerpi = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la cantidad de serpientes que desea colocar dentro de la matriz: ", JOptionPane.QUESTION_MESSAGE));
+        RunM.NSerpi = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la cantidad de serpientes que desea colocar dentro de la matriz: "));
         RunM matrizRun = new RunM();
         Semilla hilo1 = new Semilla();
         Usuario hilo2 = new Usuario();
