@@ -33,6 +33,7 @@ public class Serpiente implements Runnable {
         while (RunM.correr) {
             RunM.Matriz[x][y].setSer(RunM.Matriz[x][y].getSer() + 1);
             System.out.println("Serpiente " + nSerp + " está en " + x + "   " + y);
+            
             if (RunM.Matriz[x][y].getUs() == 1) {
                 JOptionPane.showMessageDialog(null, "Encontramos a un usuario en nuestro camino! " + nSerp, "Advertencia!", JOptionPane.ERROR_MESSAGE);
                 RunM.correr = false;

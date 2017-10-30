@@ -26,11 +26,11 @@ public class Usuario implements Runnable {
 
         while (RunM.correr) {
 
-            uX = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la posición en que FILA podria existir una semilla") + RunM.mX);
-            uY = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la posición en que COLUMNA podria existir una semilla") + RunM.mY);
+            uX = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la posición en que FILA podria existir una semilla: "));
+            uY = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la posición en que COLUMNA podria existir una semilla"));
 
             RunM.Matriz[uX][uY].setUs(1);
-            //System.out.println("El usuario se encuentra en la posicion " + RunM.Matriz[uX][uY]);
+            System.out.println("El usuario se encuentra en la posicion " + uX + "  " + uY);
 
             if (RunM.Matriz[uX][uY].getSer() >= 1) {
                 JOptionPane.showMessageDialog(null, "Una serpiente esta en la misma posición que Usuario", "Error", JOptionPane.ERROR_MESSAGE);
